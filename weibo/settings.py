@@ -14,7 +14,7 @@ DEFAULT_REQUEST_HEADERS = {
     'Accept':
     'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,en-US;q=0.7',
-    'cookie': 'SSOLoginState=1596989473; SUB=_2A25yNFBxDeRhGeFK4lIS9CjIzziIHXVR13A5rDV6PUJbktAKLU3HkW1NQtt7InBx0XecmSu45es2u5o-RgiUW6OP; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WW44JusXr_2FWE6VMHH.pfd5NHD95QNSh.7e0BcShBXWs4DqcjMi--NiK.Xi-2Ri--ciKnRi-zNSo.R1Kz4e0nNe5tt; SUHB=0FQ7-WxYE8q5XT; _T_WM=c056d74669081ac835fc1330fb99a912'
+    'cookie': "YOUR cookie"
 }
 ITEM_PIPELINES = {
     'weibo.pipelines.DuplicatesPipeline': 300,
@@ -37,6 +37,9 @@ REGION = ['全部']
 START_DATE = '2020-05-26'
 # 搜索的终止日期，为yyyy-mm-dd形式，搜索结果包含该日期
 END_DATE = '2020-05-27'
+
+OUTFILE_PREFIX = "28-29"
+
 # 图片文件存储路径
 IMAGES_STORE = './'
 # 视频文件存储路径

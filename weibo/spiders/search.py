@@ -100,7 +100,7 @@ class SearchSpider(scrapy.Spider):
             print('当前页面搜索结果为空')
         elif page_count < 50:
             self.total_page += page_count
-            print("All Date, Done")
+            print("All Date, Done", page_count)
             # 解析当前页面
             for weibo in self.parse_weibo(response):
                 self.check_environment()
