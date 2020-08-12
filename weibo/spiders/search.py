@@ -98,20 +98,20 @@ class SearchSpider(scrapy.Spider):
 
         if is_empty:
             print('当前页面搜索结果为空')
-        elif page_count < 50:
-            self.total_page += page_count
-            print("All Date, Done", page_count)
-            # 解析当前页面
-            for weibo in self.parse_weibo(response):
-                self.check_environment()
-                yield weibo
-            next_url = response.xpath(
-                '//a[@class="next"]/@href').extract_first()
-            if next_url:
-                next_url = self.base_url + next_url
-                yield scrapy.Request(url=next_url,
-                                     callback=self.parse_page,
-                                     meta={'keyword': keyword})
+        # elif page_count < 50:
+        #     self.total_page += page_count
+        #     print("All Date, Done", page_count)
+        #     # 解析当前页面
+        #     for weibo in self.parse_weibo(response):
+        #         self.check_environment()
+        #         yield weibo
+        #     next_url = response.xpath(
+        #         '//a[@class="next"]/@href').extract_first()
+        #     if next_url:
+        #         next_url = self.base_url + next_url
+        #         yield scrapy.Request(url=next_url,
+        #                              callback=self.parse_page,
+        #                              meta={'keyword': keyword})
         else:
             print("All Date, Split")
 
@@ -151,21 +151,21 @@ class SearchSpider(scrapy.Spider):
 
         if is_empty:
             print('当前页面搜索结果为空')
-        elif page_count < 50:
-            self.total_page += page_count
-            print("All Day", "Done")
+        # elif page_count < 50:
+        #     self.total_page += page_count
+        #     print("All Day", "Done")
 
-            # 解析当前页面
-            for weibo in self.parse_weibo(response):
-                self.check_environment()
-                yield weibo
-            next_url = response.xpath(
-                '//a[@class="next"]/@href').extract_first()
-            if next_url:
-                next_url = self.base_url + next_url
-                yield scrapy.Request(url=next_url,
-                                     callback=self.parse_page,
-                                     meta={'keyword': keyword})
+        #     # 解析当前页面
+        #     for weibo in self.parse_weibo(response):
+        #         self.check_environment()
+        #         yield weibo
+        #     next_url = response.xpath(
+        #         '//a[@class="next"]/@href').extract_first()
+        #     if next_url:
+        #         next_url = self.base_url + next_url
+        #         yield scrapy.Request(url=next_url,
+        #                              callback=self.parse_page,
+        #                              meta={'keyword': keyword})
         else:
             print("All Day", "Split", "24 hour")
 
